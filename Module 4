@@ -1,0 +1,33 @@
+> Frequency <- c(0.6, 0.3, 0.4, 0.4, 0.2, 0.6, 0.3, 0.4, 0.9, 0.2)
+> BP <- c(103, 87, 32, 42, 59, 109, 78, 205, 135, 176)
+> First <- c(1, 1, 1, 1, 0, 0, 0, 0, NA, 1)
+> Second <- c(0, 0, 1, 1, 0, 0, 1, 1, 1, 1)
+> FinalDecision <- c(0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+> df <- data.frame(Frequency, BP, First, Second, FinalDecision)
+> 
+> 
+> par(mfrow = c(1, 3))
+> 
+> boxplot(BP ~ First, data = df, main = "First Blood Pressure Rating",xlab = "Doctor's Rating (1 = Bad, 0 = Good)", ylab = "Blood Pressure")
+> 
+> boxplot(BP ~ Second, data = df, main = "Second Blood Pressure Rating",xlab = "Doctor's Rating (1 = High, 0 = Low)", ylab = "Blood Pressure")
+> 
+> boxplot(BP ~ FinalDecision, data = df, main = "Final Blood Pressure Rating",xlab = "Doctor's Rating (1 = High, 0 = Low)", ylab = "Blood Pressure")
+> 
+> par(mfrow = c(1, 3))
+> colors <- c("lightblue", "coral")[df$First + 1]
+> hist(df$BP, main = "First BP Ratings Overlay",
++      xlab = "Blood Pressure", ylab = "Frequency", col = colors, border = "black")
+> legend("topright", legend = c("Good", "Bad"), fill = c("lightblue", "coral"))
+> 
+> 
+> colors <- c("lightblue", "coral")[df$Second + 1]
+> hist(df$BP, main = "Second BP Ratings Overlay",
++      xlab = "Blood Pressure", ylab = "Frequency", col = colors, border = "black")
+> legend("topright", legend = c("Low", "High"), fill = c("lightblue", "coral"))
+> 
+> colors <- c("lightblue", "coral")[df$FinalDecision + 1]
+> hist(df$BP, main = "Final BP Ratings Overlay",
++      xlab = "Blood Pressure", ylab = "Frequency", col = colors, border = "black")
+> 
+> legend("topright", legend = c("Low", "High"), fill = c("lightblue", "coral"))
