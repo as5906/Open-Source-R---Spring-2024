@@ -17,17 +17,17 @@
 > par(mfrow = c(1, 3))
 > colors <- c("lightblue", "coral")[df$First + 1]
 > hist(df$BP, main = "First BP Ratings Overlay",
-+      xlab = "Blood Pressure", ylab = "Frequency", col = colors, border = "black")
++      xlab = "Blood Pressure", ylab = "Frequency", col = colors, border = "black",breaks = 10,xlim = c(0, 250))
 > legend("topright", legend = c("Good", "Bad"), fill = c("lightblue", "coral"))
 > 
 > 
 > colors <- c("lightblue", "coral")[df$Second + 1]
 > hist(df$BP, main = "Second BP Ratings Overlay",
-+      xlab = "Blood Pressure", ylab = "Frequency", col = colors, border = "black")
++      xlab = "Blood Pressure", ylab = "Frequency", col = colors, border = "black",breaks = 10,xlim = c(0, 250))
 > legend("topright", legend = c("Low", "High"), fill = c("lightblue", "coral"))
 > 
 > colors <- c("lightblue", "coral")[df$FinalDecision + 1]
 > hist(df$BP, main = "Final BP Ratings Overlay",
-+      xlab = "Blood Pressure", ylab = "Frequency", col = colors, border = "black")
++      xlab = "Blood Pressure", ylab = "Frequency", col = colors, border = "black",breaks = 10,xlim = c(0, 250))
 > 
 > legend("topright", legend = c("Low", "High"), fill = c("lightblue", "coral"))
