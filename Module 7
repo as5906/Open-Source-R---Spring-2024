@@ -1,0 +1,61 @@
+> data <- data.frame(
++     Name = c("John", "Alice", "Bob", "Emily"),
++     Age = c(25, 30, 22, 28)
++ )
+> 
+> summary(data)
+     Name                Age       
+ Length:4           Min.   :22.00  
+ Class :character   1st Qu.:24.25  
+ Mode  :character   Median :26.50  
+                    Mean   :26.25  
+                    3rd Qu.:28.50  
+                    Max.   :30.00  
+> plot(data$Age, main = "Age Distribution")
+>
+> class(data) <- "myclass"
+> data
+$Name
+[1] "John"  "Alice" "Bob"   "Emily"
+
+$Age
+[1] 25 30 22 28
+
+attr(,"class")
+[1] "myclass"
+attr(,"row.names")
+[1] 1 2 3 4
+>
+> setClass("MyClass", slots = c(Name = "character", Age = "numeric"))
+> data2 <- new("MyClass", Name = c("John", "Alice", "Bob", "Emily"), Age = c(25, 30, 22, 28))
+> data2
+An object of class "MyClass"
+Slot "Name":
+[1] "John"  "Alice" "Bob"   "Emily"
+
+Slot "Age":
+[1] 25 30 22 28
+>
+>
+> obj <- list(data = iris)
+> class(obj) <- "s3_1"
+> class(obj)
+[1] "s3_1"
+> 
+> obj2 <- list(data = mtcars)
+> class(obj2) <- "s3_2"
+> class(obj2)
+[1] "s3_2"
+>
+> setClass("s4_obj", slots = list(data = "data.frame"))
+> obj3 <- new("s4_obj", data = iris)
+> class(obj3)
+[1] "s4_obj"
+attr(,"package")
+[1] ".GlobalEnv"
+> 
+> obj4 <- new("s4_obj", data = mtcars)
+> class(obj4)
+[1] "s4_obj"
+attr(,"package")
+[1] ".GlobalEnv"
