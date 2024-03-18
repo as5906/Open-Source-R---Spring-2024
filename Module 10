@@ -1,0 +1,17 @@
+Package: AorticPredictor
+Title: Aortic Root Diameter Prediction using Clinical and Demographic Features
+Version: 0.0.0.9000
+Authors@R: Shivansh Singh <singh19@usf.edu> [aut, cre]
+Description: AorticPredictor provides a set of functions for performing simple linear
+    regression using demographic and clinical features to predict aortic root 
+    diameter. This package facilitates data preprocessing, model fitting, and 
+    prediction, streamlining the analysis process for researchers 
+    and practitioners. With intuitive functions and clear documentation, users can
+    easily apply linear regression techniques to their echocardiogram datasets,
+    aiding in the understanding and prediction of aortic root diameters.
+Depends: R (>= 3.5.0)
+License: CC0
+LazyData: true
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
